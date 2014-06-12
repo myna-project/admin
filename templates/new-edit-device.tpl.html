@@ -1,0 +1,116 @@
+<!-- ***************************************************************************
+* Copyright (c) 2014 Proxima Centauri srl <info@proxima-centauri.it>.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the GNU Public License v3.0
+* which accompanies this distribution, and is available at
+* http://www.gnu.org/licenses/gpl.html
+*  
+* Contributors:
+*     Proxima Centauri srl <info@proxima-centauri.it> - initial API and implementation
+**************************************************************************** -->
+
+<div class="row">
+	<div id="edit-device-alert"
+		class="alert alert-danger alert-dismissable hidden">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-hidden="true">&times;</button>
+	</div>
+	<div class="col-sm-6">
+		<form action="" id="edit-device-form" class="form-horizontal"
+			role="form">
+			<div class="form-group">
+				<label for="device-id-input" class="col-sm-2"> ID </label>
+				<div class="col-sm-10">
+					<input name="id" class="form-control" type="text"
+						id="device-id-input" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="device-id-input" class="col-sm-2"> Name </label>
+				<div class="col-sm-10">
+					<input name="name" class="form-control" type="text"
+						id="device-name-input" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="device-type-selection" class="col-sm-2"> Type </label>
+				<div class="col-sm-10">
+					<select name="type" id="device-type-selection" class="form-control">
+						<option selected>Temperature</option>
+						<option>OnOff</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="device-bus-selection" class="col-sm-2"> Bus </label>
+				<div class="col-sm-10">
+					<select name="bus" id="device-bus-selection" class="form-control">
+						<option selected>onewire</option>
+						<option>enocean</option>
+						<option>piface</option>
+					</select>
+				</div>
+			</div>
+			
+			<!-- custom part -->
+
+			<div class="form-group device">
+				<label for="device-external-selection" class="col-sm-2 onewiretemperature enoceantemperature"> External </label>
+				<div class="col-sm-10">
+					<select name="external" id="device-external-selection"
+						class="form-control">
+						<option>true</option>
+						<option>false</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group device onewiretemperature enoceantemperature">
+				<label for="device-register-input" class="col-sm-2">
+					Register </label>
+				<div class="col-sm-10">
+					<input name="register" class="form-control" type="text"
+						id="device-register-input" />
+				</div>
+			</div>
+
+			<div class="form-group device pifaceonoff">
+				<label for="device-coil-input" class="col-sm-2"> Coil </label>
+				<div class="col-sm-10">
+					<input name="coil" class="form-control" type="text"
+						id="device-coil-input" />
+				</div>
+			</div>
+
+			<div class="form-group device onewiretemperature enoceantemperature">
+				<label for="device-address-input" class="col-sm-2"> Address
+				</label>
+				<div class="col-sm-10">
+					<input name="address" class="form-control" type="text"
+						id="device-address-input" />
+				</div>
+			</div>
+
+			<div class="form-group device enoceantemperature">
+				<label for="device-address-input" class="col-sm-2"> EEP </label>
+				<div class="col-sm-10">
+					<input name="eep" class="form-control" type="text"
+						id="device-eep-input" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a role="button" href="devices_config" id="edit-device-cancel"
+						class="btn btn-danger"> Cancel </a>
+					<button id="edit-device-submit" type="submit"
+						class="btn btn-success">Submit</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+%rebase layout.tpl.html custom='new_edit_device', static_file_path=static_file_path, api_path=api_path

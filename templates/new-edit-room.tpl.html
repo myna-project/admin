@@ -1,0 +1,122 @@
+<!-- ***************************************************************************
+* Copyright (c) 2014 Proxima Centauri srl <info@proxima-centauri.it>.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the GNU Public License v3.0
+* which accompanies this distribution, and is available at
+* http://www.gnu.org/licenses/gpl.html
+*  
+* Contributors:
+*     Proxima Centauri srl <info@proxima-centauri.it> - initial API and implementation
+**************************************************************************** -->
+
+<div class="row">
+	<div id="edit-room-alert"
+		class="alert alert-danger alert-dismissable hidden">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-hidden="true">&times;</button>
+	</div>
+	<div class="col-sm-6">
+		<form action="" id="edit-room-form" class="form-horizontal"
+			role="form">
+			<div class="form-group">
+				<label for="room-id-input" class="col-sm-2"> ID </label>
+				<div class="col-sm-10">
+					<input name="id" class="form-control" type="text"
+						id="room-id-input" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="device-name-selection" class="col-sm-2"> Name </label>
+				<div class="col-sm-10">
+					<input name="name" class="form-control" type="text"
+						id="device-name-input" />
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="room-external-selection" class="col-sm-2">
+					External </label>
+				<div class="col-sm-10">
+					<select name="external" id="room-external-selection"
+						class="form-control">
+						<option value="true">True</option>
+						<option value="false">False</option>
+					</select>
+				</div>
+			</div>
+
+			<fieldset>
+				<legend>Alert</legend>
+
+				<div class="form-group">
+					<label for="device-alert-tupper" class="col-sm-2"> Upper Temp</label>
+					<div class="col-sm-10">
+						<input name="alert.tupper" class="form-control" type="text"
+							id="device-alert-tupper" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="device-alert-lower" class="col-sm-2">Lower Temp</label>
+					<div class="col-sm-10">
+						<input name="alert.lower" class="form-control" type="text"
+							id="device-alert-tlower" />
+					</div>
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>Devices</legend>
+
+				<div class="form-group">
+					<label for="room-devices-input" class="col-sm-2"> Selection
+					</label>
+					<div class="col-sm-10">
+						<select multiple class="form-control" id="room-devices-input">
+
+						</select>
+					</div>
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>Climatic</legend>
+
+				<div class="form-group">
+					<label for="device-climatic-x" class="col-sm-2">X </label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" id="device-climatic-x" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="device-climatic-y" class="col-sm-2">Y </label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" id="device-climatic-y" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="device-climatic-k" class="col-sm-2">K </label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" id="device-climatic-k" />
+					</div>
+				</div>
+
+			</fieldset>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a role="button" href="rooms_config" id="edit-room-cancel"
+						class="btn btn-danger"> Cancel </a>
+					<button id="edit-room-submit" type="submit" class="btn btn-success">Submit</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+</div>
+%rebase layout.tpl.html custom='new_edit_room', static_file_path=static_file_path, api_path=api_path

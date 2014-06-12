@@ -1,0 +1,72 @@
+<!-- ***************************************************************************
+* Copyright (c) 2014 Proxima Centauri srl <info@proxima-centauri.it>.
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the GNU Public License v3.0
+* which accompanies this distribution, and is available at
+* http://www.gnu.org/licenses/gpl.html
+*  
+* Contributors:
+*     Proxima Centauri srl <info@proxima-centauri.it> - initial API and implementation
+**************************************************************************** -->
+
+<div class="row">
+	<div id="edit-logic-alert"
+		class="alert alert-danger alert-dismissable hidden">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-hidden="true">&times;</button>
+	</div>
+
+	<div class="col-sm-6">
+		<form action="" id="edit-logic-form" class="form-horizontal"
+			role="form">
+			<div class="form-group">
+				<label for="logic-type-input" class="col-sm-2"> Type </label>
+				<div class="col-sm-10">
+					<select name="type" class="form-control" id="logic-type-input">
+						<option>TimeProgramming</option>
+						<option>ThresholdTemperature</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="logic-room-input" class="col-sm-2"> Room </label>
+				<div class="col-sm-10">
+					<select class="form-control" id="logic-room-input">
+ 
+					</select>
+				</div>
+			</div>
+			
+					
+			<div class="form-group">
+				<label for="logic-temperature-input" class="col-sm-2">
+					Temperature </label>
+				<div class="col-sm-10">
+					<input name="temp" class="form-control" type="text"
+						id="logic-temperature-input" />
+				</div>
+			</div>
+
+			<fieldset>
+				<legend>TimeProgramming <a href="#" id="add-logic-window" class="btn btn-primary" role="button">Add Logic</a></legend>
+				
+
+
+				<div id="dynamic-table"></div>
+
+			</fieldset>
+
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<a role="button" href="logics_config" id="edit-logic-cancel"
+						class="btn btn-danger"> Cancel </a>
+					<button id="edit-logic-submit" type="submit"
+						class="btn btn-success">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+%rebase layout.tpl.html custom='new_edit_logic',static_file_path=static_file_path,api_path=api_path
